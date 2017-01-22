@@ -119,10 +119,10 @@ add_action( 'plugins_loaded', array( 'Templater', 'get_instance' ) );
 
 function map_load_scripts() {
 
-    wp_enqueue_style( 'map-style',  __DIR__ . '/lib/assets/css/style.css', [], true);
+    wp_enqueue_style( 'map-style',  plugin_dir_url( __FILE__ )  . '/lib/assets/css/style.css', [], random_int(111,999));
     /*      wp_enqueue_script( 'map-jquery',  get_template_directory_uri() . '/map/lib/assets/vendor/jquery.min.js', false, true);*/
-    wp_enqueue_script( 'map-d3',   __DIR__ . '/lib/assets/vendor/d3.min.js', ['jquery'], false, true);
-    wp_enqueue_script( 'map-scripts',  __DIR__ . '/lib/assets/js/app.min.js', ['jquery','map-d3'], false, true);
+    wp_enqueue_script( 'map-d3',   plugin_dir_url( __FILE__ )  . '/lib/assets/vendor/d3.min.js', ['jquery'], false, true);
+    wp_enqueue_script( 'map-scripts',  plugin_dir_url( __FILE__ )  . '/lib/assets/js/app.min.js', ['jquery','map-d3'], false, true);
 }
 
 add_action( 'wp_enqueue_scripts', 'map_load_scripts' );
@@ -140,6 +140,8 @@ function json_get_meta( $value ) {
 }
 
 function json_add_meta_box() {
+  
+if ( 'ad-maps-template.php' == get_post_meta( $_GET['post'], '_wp_page_template', true ) ) {
     add_meta_box(
         'json-json',
         __( 'JSON', 'json' ),
@@ -148,6 +150,7 @@ function json_add_meta_box() {
         'side',
         'high'
     );
+  }
 }
 
 
@@ -169,3 +172,6 @@ function json_save( $post_id ) {
         update_post_meta( $post_id, 'json_url', esc_attr( $_POST['json_url'] ) );
 }
 add_action( 'save_post', 'json_save' );
+
+    add_action( 'add_meta_boxes', 'json_add_meta_box' );
+

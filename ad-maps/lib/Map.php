@@ -11,7 +11,8 @@ class Map {
   function __construct( $url ) {
    $json = json_decode(file_get_contents($url), true);
    $this->type = $json['type'];
-   $this->name = $json['name'];
+   $this->name = get_the_title();
+   $this->content = get_the_content();
    $this->data = $json['data'];
    $this->text = $json['text'];
    $this->legend = $json['legend'];
@@ -21,11 +22,14 @@ class Map {
 
   
   function loadTwig()
-    {
-        require_once __DIR__ . '/twig/lib/Twig/Autoloader.php';
+    { 
+    if (!class_exists('Twig_Autoloader')) {
+       require_once __DIR__ . '/twig/lib/Twig/Autoloader.php';
         Twig_Autoloader::register();
         $loader = new Twig_Loader_Filesystem( __DIR__ . '/templates/');
         $this->twig = new Twig_Environment($loader, array());
+    }
+       
     }
 
    function render($template, $params = array()) {
@@ -50,13 +54,13 @@ class Map {
     $s = array_map(function($item){
       return $item['data'];
     }, $this->data);
-
+$t = [];
     foreach ($this->keys as $k) {
-        $s[$k] = array_sum(array_column($s, $k));
+        $t[$k] = array_sum(array_column($s, $k));
 
     }
 
-   return $s;
+   return $t;
     
   }
   
@@ -143,9 +147,19 @@ class Map {
   }
   function renderInfo(){
         $s = $this->summary();
-        $summary = sprintf($this->text, $s['yes'], $s['no'], $s['abstain']);
+       $summary = $this->text;
+    
+    foreach ($s as $k=>$v) {
+      $summary = str_replace('['.$k.']', $v, $summary);
+    }
+    
 
-        $this->render('info', ['labels'=>$this->labels, 'title'=> $this->name, 'summary' => $summary]);
+        $this->render('info', [
+          
+          'labels'=>$this->labels, 
+          'title'=> $this->name, 
+          'summary' => $summary, 
+          'content'=> $this->content]);
 
   }
     function renderLabels() {

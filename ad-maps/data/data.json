@@ -1,6 +1,7 @@
 { "type": 1,
   "name": "Lorem ipsum dolor CETA?",
-  "text": "Za przyjęciem uchwały głosowało %d posłów, przeciw – %d, a %d wstrzymało się od głosu.",
+  "text": "Za przyjęciem uchwały głosowało [yes] posłów, przeciw – [no], a [abstain] wstrzymało się od głosu. xD [yes] xD [yes]  xD [yes]",
+  "legend": "% posłów za przyjęciem uchwały",
   "legend": "% posłów za przyjęciem uchwały",
   "labels": 
     { "yes": "Za",
