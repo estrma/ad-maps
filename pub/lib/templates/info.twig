@@ -1,0 +1,27 @@
+<div id="map-info" class="columns medium-6">
+    <h1 id="map-title" class="sequential" data-seq="1">
+      {{ title }}
+    </h1>
+   <div id="map-text" class="row">
+     <div class="columns medium-6 sequential" data-seq="2">
+      <p>  {{ summary }}</p>
+       <ol></ol>
+     </div>
+      <div class="columns medium-6 summary-chart sequential" data-seq="3">
+      <div id="summary-chart"></div>
+
+
+
+           
+     </div>
+
+   </div>
+    <div class="row">
+        <div class="columns medium-12">
+            <div>
+
+                {% include 'legend.twig' with  {'items':labels}  %}
+            </div>
+        </div>
+    </div>
+  </div>

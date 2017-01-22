@@ -1,0 +1,159 @@
+{ "type": 1,
+  "name": "Lorem ipsum dolor CETA?",
+  "text": "Za przyjęciem uchwały głosowało %d posłów, przeciw – %d, a %d wstrzymało się od głosu.",
+  "legend": "% posłów za przyjęciem uchwały",
+  "labels": 
+    { "yes": "Za",
+      "no" : "Przeciw",
+      "abstain": "Wstrzymało się",
+      "nodata": "Brak danych"
+    }
+  ,
+  "data": [
+
+  {
+    "id": "id_1",
+    "data": {
+      "yes": 6,
+      "no": 0,
+      "abstain": 0,
+      "total" : 10
+    }
+  },
+  {
+    "id": "id_2",
+    "data": {
+      "yes": 0,
+      "no": 0,
+      "abstain": 6,
+      "total" : 8
+    }
+  },
+  {
+    "id": "id_3",
+    "data": {
+      "yes": 5,
+      "no": 5,
+      "abstain": 0,
+      "total" : 11
+    }
+  },
+  {
+    "id": "id_4",
+    "data": {
+      "yes": 4,
+      "no": 1,
+      "abstain": 3,
+      "total" : 11
+    }
+  },
+  {
+    "id": "id_5",
+    "data": {
+      "yes": 0,
+      "no": 5,
+      "abstain": 0,
+      "total" : 5
+    }
+  },
+  {
+    "id": "id_6",
+    "data": {
+      "yes": 3,
+      "no": 1,
+      "abstain": 5,
+      "total" : 9
+    }
+  },
+  {
+    "id": "id_7",
+    "data": {
+      "yes": 9,
+      "no": 0,
+      "abstain": 4,
+      "total" : 20
+    }
+  },
+  {
+    "id": "id_8",
+    "data": {
+      "yes": 1,
+      "no": 0,
+      "abstain": 4,
+      "total" : 8
+    }
+  },
+  {
+    "id": "id_9",
+    "data": {
+      "yes": 7,
+      "no": 4,
+      "abstain": 1,
+      "total" : 2
+    }
+  },
+  {
+    "id": "id_10",
+    "data": {
+      "yes": 9,
+      "no": 0,
+      "abstain": 1,
+      "total" : 9
+    }
+  },
+  {
+    "id": "id_11",
+    "data": {
+      "yes": 0,
+      "no": 0,
+      "abstain": 0,
+      "total" : 20
+    }
+  },
+  {
+    "id": "id_12",
+    "data": {
+      "yes": 5,
+      "no": 1,
+      "abstain": 0,
+      "total" : 20
+    }
+  },
+      {
+    "id": "id_13",
+    "data": {
+      "yes": 1,
+      "no": 5,
+      "abstain": 2,
+      "total" : 14
+    }
+  },
+    {
+      "id": "id_14",
+      "data": {
+        "yes": 1,
+        "no": 0,
+        "abstain": 2,
+
+        "total" : 16
+      }
+    },
+    {
+      "id": "id_15",
+      "data": {
+        "yes": 0,
+        "no": 4,
+        "abstain": 6,
+        "total" :12
+      }
+    },
+    {
+      "id": "id_16",
+      "data": {
+        "yes": 1,
+        "no": 1,
+        "abstain": 2,
+        "total" : 4
+      }
+    }
+]}

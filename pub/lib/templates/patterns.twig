@@ -1,0 +1,49 @@
+<svg version="1.1" id="patterns" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve">
+  <defs>
+
+
+
+
+      {% for item in items %}
+
+      {% set count = item|length %}
+      {% set counter = 0 %}
+      <pattern id="pattern-{{ item | join('-') }}" width="{{ 30 }}" height="{{ 10 * 3  }}"  patternTransform="rotate(135)" patternUnits="userSpaceOnUse" >
+
+          {% for s in item %}
+
+            {% set ar = s|split('-') %}
+
+            {% if ar|length == 1 %}
+
+             <rect width="{{ 30 }}" height="{{ 30 }}" class="{{ ar[0] }}"></rect>
+
+             {% else %}
+
+
+                  {% set color = ar[0] %}
+                  {% set size = ar[1] %}
+
+
+
+             <rect
+                     width="{{ 30 }}"
+                     height="{{ size * 3 }}"
+                     x="0"
+                     y="{{ counter * 3 }}"
+                     class="{{ color }}"></rect>
+
+          {% set counter = counter + size %}
+
+             {% endif %}
+
+          {% endfor %}
+      </pattern>
+      {% endfor %}
+
+
+
+
+</defs>
+</svg>
+
