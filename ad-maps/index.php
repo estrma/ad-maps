@@ -38,6 +38,7 @@ $map = new Map('data/data.json');
   
   </div>
 
+
 <script>
     var map_data =  JSON.parse('<?php $map->json(); ?>') ;
 

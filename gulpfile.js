@@ -22,7 +22,7 @@ gulp.task('scripts', function () {
         },
         exclude: ['tasks']
     }))
-    .pipe(gulp.dest("pub/lib/assets/js"))
+    .pipe(gulp.dest("ad-maps/lib/assets/js"))
     .pipe(livereload())
   ;
 });
@@ -30,7 +30,7 @@ gulp.task('scripts', function () {
 gulp.task('sass', function () {
   return gulp.src("assets/scss/style.scss")
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest("pub/lib/assets/css"))
+    .pipe(gulp.dest("ad-maps/lib/assets/css"))
     .pipe(livereload())
   ;
 });
@@ -43,8 +43,10 @@ gulp.task('default', ['sass', 'scripts'], function() {
     gulp.watch(['assets/scss/style.scss'], ['sass']);
     gulp.watch(['assets/js/app.js'], ['scripts']);
 
-    gulp.watch(['pub/lib/**/*.php', 'pub/lib/templates/*.twig']).on('change', function(file){
+    gulp.watch(['ad-maps/lib/**/*.php', 'ad-maps/lib/templates/*.twig']).on('change', function(file){
         livereload.changed(file.path);
     });
 
 });
+
+
