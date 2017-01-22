@@ -18,7 +18,14 @@
 <div id="container">
   
 <?php 
-include('lib/Map.php'); 
+include('lib/Map.php');
+
+function get_the_title() {
+    return 'Title';
+}
+function get_the_content() {
+    return 'Content';
+}
 $map = new Map('data/data.json');
 
 
