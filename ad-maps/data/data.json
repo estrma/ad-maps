@@ -15,9 +15,9 @@
   {
     "id": "id_1",
     "data": {
-      "yes": 6,
-      "no": 0,
-      "abstain": 0,
+      "yes": 1,
+      "no": 1,
+      "abstain": 1,
       "total" : 10
     }
   },

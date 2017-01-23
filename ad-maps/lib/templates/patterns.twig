@@ -8,7 +8,8 @@
 
       {% set count = item|length %}
       {% set counter = 0 %}
-      <pattern id="pattern-{{ item | join('-') }}" width="{{ 30 }}" height="{{ 10 * 3  }}"  patternTransform="rotate(135)" patternUnits="userSpaceOnUse" >
+      {% set base = 27 %}
+      <pattern id="pattern-{{ item | join('-') }}" width="{{ base }}" height="{{ base  }}"  patternTransform="rotate(135)" patternUnits="userSpaceOnUse" >
 
           {% for s in item %}
 
@@ -16,7 +17,7 @@
 
             {% if ar|length == 1 %}
 
-             <rect width="{{ 30 }}" height="{{ 30 }}" class="{{ ar[0] }}"></rect>
+             <rect width="{{ base }}" height="{{ base }}" class="{{ ar[0] }}"></rect>
 
              {% else %}
 
@@ -27,7 +28,7 @@
 
 
              <rect
-                     width="{{ 30 }}"
+                     width="{{ base }}"
                      height="{{ size * 3 }}"
                      x="0"
                      y="{{ counter * 3 }}"
