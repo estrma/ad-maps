@@ -1,0 +1,191 @@
+.yes {
+  background-color: #009B37;
+  fill: #009B37; }
+
+svg .yes {
+  stroke: #009B37; }
+
+.stripes-yes {
+  background-image: repeating-linear-gradient(135deg, #009B37 0px, #009B37 4px, transparent 4px, transparent 8px); }
+
+.yes-c {
+  color: #009B37;
+  fill: #009B37; }
+
+.no {
+  background-color: #F00601;
+  fill: #F00601; }
+
+svg .no {
+  stroke: #F00601; }
+
+.stripes-no {
+  background-image: repeating-linear-gradient(135deg, #F00601 0px, #F00601 4px, transparent 4px, transparent 8px); }
+
+.no-c {
+  color: #F00601;
+  fill: #F00601; }
+
+.abstain {
+  background-color: #0049AA;
+  fill: #0049AA; }
+
+svg .abstain {
+  stroke: #0049AA; }
+
+.stripes-abstain {
+  background-image: repeating-linear-gradient(135deg, #0049AA 0px, #0049AA 4px, transparent 4px, transparent 8px); }
+
+.abstain-c {
+  color: #0049AA;
+  fill: #0049AA; }
+
+.nodata {
+  background-color: white;
+  fill: white; }
+
+svg .nodata {
+  stroke: white; }
+
+.stripes-nodata {
+  background-image: repeating-linear-gradient(135deg, white 0px, white 4px, transparent 4px, transparent 8px); }
+
+.nodata-c {
+  color: white;
+  fill: white; }
+
+.blue {
+  background-color: #0049AA;
+  fill: #0049AA; }
+
+svg .blue {
+  stroke: #0049AA; }
+
+.stripes-blue {
+  background-image: repeating-linear-gradient(135deg, #0049AA 0px, #0049AA 4px, transparent 4px, transparent 8px); }
+
+.blue-c {
+  color: #0049AA;
+  fill: #0049AA; }
+
+@font-face {
+  font-family: 'DINPro';
+  src: url("../font/DINProCondensedBold.eot");
+  src: url("../font/DINProCondensedBold.eot?#iefix") format("embedded-opentype"), url("../font/DINProCondensedBold.woff") format("woff"), url("../font/DINProCondensedBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+.middle_inner {
+  background-color: white !important; }
+  .middle_inner .fullwidth {
+    padding: 30px 20px; }
+
+.page-template-template-map .headline {
+  display: none !important; }
+
+#map {
+  min-height: 626px;
+  background-color: #FFE100;
+  padding: 20px;
+  font-family: 'DINPro', sans-serif; }
+  #map .map-text-content {
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 30px; }
+  #map a {
+    border-bottom: 2px #F00601 solid; }
+  #map h1, #map h2, #map h3 {
+    font-family: 'DINPro';
+    font-weight: bold; }
+  #map h1 {
+    font-size: 26px;
+    line-height: 1;
+    margin-top: 30px; }
+  #map h2 {
+    font-size: 16px; }
+  #map h3 {
+    font-size: 16px; }
+  #map #map-text p {
+    font-size: 18px; }
+  #map #map-text .summary-chart {
+    text-align: center;
+    height: 300px;
+    transition: all 200ms ease; }
+  #map #map-text ul, #map #map-text li {
+    margin: 0;
+    padding: 0; }
+  #map #map-text ul li {
+    display: inline-block;
+    padding-right: 20px;
+    font-size: 18px;
+    text-align: left;
+    line-height: 22px; }
+    #map #map-text ul li:before {
+      content: none !important; }
+  #map svg {
+    max-width: 100%;
+    height: auto; }
+  #map .region {
+    stroke-width: 2;
+    stroke: white;
+    cursor: pointer;
+    transform-origin: 50% 50%;
+    transition: all 200ms ease; }
+  #map .legend {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+    #map .legend span, #map .legend div {
+      display: inline-block;
+      vertical-align: middle; }
+    #map .legend .legend-field {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px; }
+
+.arc {
+  stroke-width: 1;
+  stroke: #0049AA; }
+
+#patterns {
+  position: absolute;
+  left: -9999px; }
+  #patterns rect {
+    stroke: none; }
+
+.sequential {
+  opacity: 0; }
+
+.row {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+
+.row::before, .row::after {
+  content: ' ';
+  display: table; }
+
+.row::after {
+  clear: both; }
+
+.column, .columns {
+  width: 100%;
+  float: left; }
+
+.cont {
+  margin-top: 20px; }
+
+@media screen and (min-width: 768px) {
+  .medium-6 {
+    width: 50%; }
+  #map h1 {
+    font-size: 60px; }
+  #map h2 {
+    font-size: 16px; }
+  #map h3 {
+    font-size: 24px; }
+  #map p {
+    font-size: 24px; }
+  #map-text {
+    display: flex;
+    align-items: center; } }

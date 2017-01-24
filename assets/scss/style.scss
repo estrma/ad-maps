@@ -1,0 +1,227 @@
+@mixin gradient($one, $two) {
+
+  background-image:
+          repeating-linear-gradient(
+          135deg, $one 0px, $one 4px, $two 4px, $two 8px
+
+          );
+}
+
+$yellow: #FFE100;
+
+$colors: (yes: #009B37, no: #F00601, abstain:  #0049AA, nodata: white, blue: #0049AA);
+
+
+@each $name, $c in $colors {
+
+  .#{$name} {
+    background-color: $c;
+    fill: $c;
+  }
+  svg .#{$name} {
+    stroke: $c;
+  }
+  .stripes-#{$name} {
+    @include gradient($c, transparent)
+  }
+  .#{$name}-c {
+    color: $c;
+    fill: $c;
+  }
+
+
+
+}
+
+@font-face {
+	font-family: 'DINPro';
+	src: url('../font/DINProCondensedBold.eot');
+	src: url('../font/DINProCondensedBold.eot?#iefix') format('embedded-opentype'),
+		url('../font/DINProCondensedBold.woff') format('woff'),
+		url('../font/DINProCondensedBold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+
+
+.middle_inner {
+  background-color: white !important;
+  .fullwidth {
+    padding:30px 20px;
+  }
+}
+
+.page-template-template-map .headline {
+  display:none !important;
+}
+
+
+#map { 
+  .map-text-content {
+        font-size: 18px;
+      line-height: 22px;
+    margin-top:30px;
+  }
+
+  a {
+
+    border-bottom: 2px map_get($colors, no) solid;
+  }
+
+ min-height: 626px;
+ background-color:$yellow ;
+ padding:20px;
+  font-family: 'DINPro', sans-serif;
+  
+  h1,h2, h3 {
+    font-family: 'DINPro';
+    font-weight: bold;
+  }
+  h1 {
+    font-size:26px;
+    line-height: 1;
+    margin-top: 30px;
+  }
+  h2 {
+    font-size:16px;
+  }
+  h3 {
+    font-size:16px;
+  }
+  #map-text {
+
+
+    p {
+   
+      font-size:18px;
+    }
+    .summary-chart {
+      text-align: center;
+      height:300px;
+      transition: all 200ms ease;
+    }
+    ul, li {
+      margin:0;
+      padding:0;
+    }
+    ul {
+      li {
+        display: inline-block;
+        padding-right: 20px;
+        font-size: 18px;
+        text-align: left;
+        line-height: 22px;
+        &:before {
+          content: none !important;
+        }
+      }
+    }
+    
+  }
+  
+  svg {
+  max-width: 100%;
+  height: auto;
+  }
+  
+  .region {
+
+  stroke-width:2;
+  stroke: white ;
+  cursor: pointer;
+  transform-origin: 50% 50%;
+  transition: all 200ms ease;
+
+}
+  .legend {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    span, div {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .legend-field {
+      width:20px;
+      height:20px;
+      margin-right:10px;
+    }
+  }
+
+
+}
+
+.arc {
+  stroke-width:1;
+  stroke:  map-get($colors, abstain) ;
+  }
+
+.region {
+ // fill: $yellow;
+}
+
+#patterns {
+  position: absolute;
+  left: -9999px;
+  rect {
+    stroke: none;
+  }
+}
+.sequential  {
+  opacity: 0;
+}
+
+.row {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+
+  .row::before, .row::after {
+    content: ' ';
+    display: table; }
+  .row::after {
+    clear: both; }
+ 
+
+.column, .columns {
+  width: 100%;
+  float: left;
+   }
+
+.cont {
+  margin-top: 20px;
+}
+
+
+@media screen and (min-width: 768px) {
+
+  
+.medium-6 {
+  width:50%;
+}
+  #map {
+     h1 {
+    font-size:60px;
+    }
+    h2 {
+      font-size:16px;
+    }
+    h3 {
+      font-size:24px;
+    }
+    p {
+       font-size:24px;
+    }
+  }
+  
+  #map-text {
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+
+
+
