@@ -104,6 +104,9 @@ jQuery(function ($) {
                 val = $(this).attr('id'),
                 name = $(this).data('name'),
                 $txt = $('#map-text p');
+            custom_text = map_data["data"].filter(function (x) {
+                return x['id'] == val;
+            }).pop()['text'];
 
             if (e.type == 'mouseover') {
 
@@ -112,7 +115,11 @@ jQuery(function ($) {
                     $('.summary-chart').css({ opacity: 0 });
                 } else {
                     change(val);
-                    display = name;
+                    if (typeof custom_text !== 'undefined') {
+                        display = custom_text;
+                    } else {
+                        display = name;
+                    }
                 }
 
                 $('.region').css({
