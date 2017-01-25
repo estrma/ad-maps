@@ -128,7 +128,7 @@ function map_charts() {
           let display,
               val = $(this).attr('id'),
               name = $(this).data('name'),
-              $txt = $('#map-text p');
+              $txt = $('#map-text p'),
               custom_text = map_data.filter(function(x){return x['id']==val;}).pop()['text'];
 
 

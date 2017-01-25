@@ -103,8 +103,8 @@ jQuery(function ($) {
             var display = void 0,
                 val = $(this).attr('id'),
                 name = $(this).data('name'),
-                $txt = $('#map-text p');
-            custom_text = map_data.filter(function (x) {
+                $txt = $('#map-text p'),
+                custom_text = map_data.filter(function (x) {
                 return x['id'] == val;
             }).pop()['text'];
 
