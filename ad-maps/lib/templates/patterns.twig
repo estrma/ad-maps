@@ -1,50 +1,47 @@
-<svg version="1.1" id="patterns" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve">
+<svg version="1.1" id="patterns" xmlns="http://www.w3.org/2000/svg" x="0px"
+     y="0px" xml:space="preserve">
   <defs>
-
-
 
 
       {% for item in items %}
 
       {% set count = item|length %}
       {% set counter = 0 %}
-      {% set base = 27 %}
-      <pattern id="pattern-{{ item | join('-') }}" width="{{ base }}" height="{{ base  }}"  patternTransform="rotate(135)" patternUnits="userSpaceOnUse" >
+      {% set base = 30 %}
+      <pattern id="pattern-{{ item | join('-') }}" width="{{ base }}" height="{{ base  }}"
+               patternTransform="rotate(135)" patternUnits="userSpaceOnUse">
 
           {% for s in item %}
 
-            {% set ar = s|split('-') %}
+          {% set ar = s|split('-') %}
 
-            {% if ar|length == 1 %}
+          {% if ar|length == 1 %}
 
-             <rect width="{{ base }}" height="{{ base }}" class="{{ ar[0] }}"></rect>
+          <rect width="{{ base }}" height="{{ base }}" class="{{ ar[0] }}"></rect>
 
-             {% else %}
-
-
-                  {% set color = ar[0] %}
-                  {% set size = ar[1] %}
+          {% else %}
 
 
+          {% set color = ar[0] %}
+          {% set size = ar[1] %}
 
-             <rect
-                     width="{{ base }}"
-                     height="{{ size * 3 }}"
-                     x="0"
-                     y="{{ counter * 3 }}"
-                     class="{{ color }}"></rect>
+
+          <rect
+                  width="{{ base }}"
+                  height="{{ size * 3 }}"
+                  x="0"
+                  y="{{ counter * 3 }}"
+                  class="{{ color }}"></rect>
 
           {% set counter = counter + size %}
 
-             {% endif %}
+          {% endif %}
 
           {% endfor %}
       </pattern>
       {% endfor %}
 
 
-
-
-</defs>
+  </defs>
 </svg>
 
