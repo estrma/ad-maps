@@ -128,8 +128,8 @@ function map_charts() {
           let display,
               val = $(this).attr('id'),
               name = $(this).data('name'),
-              $txt = $('#map-text p');
-
+              $txt = $('#map-text p'),
+              custom_text = map_data.filter(function(x){return x['id']==val;}).pop()['text'];
 
 
              if (e.type == 'mouseover') {
@@ -139,8 +139,11 @@ function map_charts() {
                      $('.summary-chart').css({  opacity: 0 });
                  } else {
                      change(val);
-                     display = name;
-
+                     if (typeof custom_text !== 'undefined') {
+                         display = custom_text;
+                     } else {
+                         display = name;
+                     }
                  }
 
 
@@ -149,7 +152,7 @@ function map_charts() {
                      opacity: 0.3
                  });
                  target.css({  opacity: 1 });
-                 console.log(    target[0].getBBox())
+                 console.log(target[0].getBBox());
 
              } else if  (e.type == 'mouseout') {
 

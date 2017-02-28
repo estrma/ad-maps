@@ -129,7 +129,7 @@ $colors: (yes: #009B37, no: #F00601, abstain:  #0049AA, nodata: white, blue: #00
 
   stroke-width:2;
   stroke: white ;
-  cursor: pointer;
+  //cursor: pointer; // suggests it can be clicked
   transform-origin: 50% 50%;
   transition: all 200ms ease;
 

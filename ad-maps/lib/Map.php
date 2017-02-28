@@ -46,7 +46,7 @@ class Map {
         'id' => 'all',
         'data' => $this->summary()
       ];
-       echo json_encode($data);
+      echo str_replace("\u0022", "\\\\\"", json_encode($data, JSON_HEX_QUOT));
   }
   
   function summary() {

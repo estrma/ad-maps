@@ -128,7 +128,6 @@ svg .blue {
   #map .region {
     stroke-width: 2;
     stroke: white;
-    cursor: pointer;
     transform-origin: 50% 50%;
     transition: all 200ms ease; }
   #map .legend {
